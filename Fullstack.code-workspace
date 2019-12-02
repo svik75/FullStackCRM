@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"javascript.implicitProjectConfig.experimentalDecorators": true
+	}
+}

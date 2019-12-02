@@ -1,0 +1,36 @@
+<div *ngIf="position$ | async as positions; else loader ">
+<table class="highlight" *ngIf="positions.length; else empty">
+    <thead>
+    <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th>Количество</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let position of positions">
+        <td>{{position.name}}</td>
+        <td>{{position.cost}} руб.</td>
+        <td>
+            <div class="input-field inline order-position-input" >
+                <input type="number" value="1" min="1" [(ngModel)]="position.quantity">
+            </div>
+        </td>
+        <td>
+            <button class="btn waves-effect wavers-light btn-small" [disabled]="!position.quantity"
+            (click)="addToOrder(position)">Добавить</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<ng-template #empty>
+  <div class="center"> В данной категории нет позиций!</div>
+</ng-template>
+</div>
+
+<div><ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template></div>
+
