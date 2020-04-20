@@ -65,6 +65,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy, AfterViewInit {
     this.offset += STEP;
     this.fetch();
   }
+
   // ------------------------------------------------
   applyFilter(filter: Filter) {
     this.orders = [];

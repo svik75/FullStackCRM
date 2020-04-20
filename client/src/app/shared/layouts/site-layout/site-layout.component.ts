@@ -12,7 +12,7 @@ export class SiteLayoutComponent implements OnInit, AfterViewInit {
   @ViewChild('floating', null) floatingRef: ElementRef;
 
   links = [
-    { url: '/overview', name: 'Обзор' },
+    { url: '/query', name: 'Вопросы с сайта' },
     { url: '/analytics', name: 'Аналитика' },
     { url: '/history', name: 'История' },
     { url: '/order', name: 'Добавить заказ' },

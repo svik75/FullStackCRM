@@ -35,6 +35,7 @@ export class HistoryFilterComponent implements OnDestroy, AfterViewInit {
     this.start.destroy();
     this.end.destroy();
   }
+  // -------------------------------------------------
   validate() {
     if (!this.start.date || !this.end.date) {
       this.isValid = true;
@@ -42,7 +43,7 @@ export class HistoryFilterComponent implements OnDestroy, AfterViewInit {
     }
     this.isValid = this.start.date < this.end.date;
   }
-
+// -----------------------------------------------
   ngAfterViewInit() {
     this.start = MaterialService.initDatepicker(this.startRef, this.validate.bind(this));
     this.end = MaterialService.initDatepicker(this.endRef, this.validate.bind(this));
